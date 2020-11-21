@@ -1,7 +1,5 @@
 from flask import Flask
-
+from config import Config
 app = Flask(__name__)
-
-print('哪个包在使用我：', __name__)
-
+app.config.from_object(Config)
 from app import routes
